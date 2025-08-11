@@ -1,4 +1,4 @@
-image: gitpod/workspace-flutter:latest
+image: ubuntu:latest
 
 tasks:
   - command: |
