@@ -1,0 +1,31 @@
+image: ubuntu:22.04
+
+tasks:
+  - init: |
+      # Install required dependencies
+      sudo apt-get update
+      sudo apt-get install -y wget unzip xz-utils zip libglu1-mesa openjdk-11-jdk
+
+      # Clone Flutter SDK
+      git clone https://github.com/flutter/flutter.git /workspace/flutter
+
+      # Add Flutter to PATH for this session
+      echo 'export PATH="/workspace/flutter/bin:$PATH"' >> ~/.bashrc
+      source ~/.bashrc
+
+      # Run flutter doctor to finish setup
+      /workspace/flutter/bin/flutter doctor -v
+
+  - command: |
+      # Add Flutter to PATH for this session
+      export PATH="/workspace/flutter/bin:$PATH"
+      
+      # Get dependencies
+      flutter pub get
+
+      # Run Flutter app on web-server
+      flutter run -d web-server --web-port=8080 --web-hostname=0.0.0.0
+
+ports:
+  - port: 8080
+    onOpen: open-preview
