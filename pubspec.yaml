@@ -1,0 +1,11 @@
+name: gold_usd_news
+description: Gold/USD news and sentiment mobile app
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.5
+  flutter_local_notifications: ^13.0.0
