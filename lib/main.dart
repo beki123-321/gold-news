@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   List<dynamic> articles = [];
   Set<String> shownTitles = {};
 
-  final String apiKey = 'YOUR_NEWSAPI_KEY'; // Replace with your NewsAPI key
+  final String apiKey = '1047bd427fcb44eba707b20de4a00546'; // Replace with your NewsAPI key
 
   @override
   void initState() {
